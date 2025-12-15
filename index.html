@@ -1,92 +1,133 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Estoque Almoxarifado | TCC</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-    header {
-      background: #1f2937;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 30px 20px;
-      background: #fff;
-    }
-    h2 {
-      color: #1f2937;
-    }
-    ul {
-      line-height: 1.8;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 20px;
-      background: #2563eb;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      color: #666;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Estoque Almoxarifado | TCC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #0f172a;
+            color: #e5e7eb;
+        }
+
+        header {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #60a5fa;
+            margin-bottom: 10px;
+        }
+
+        .tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech span {
+            background: #1e293b;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        a.button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 18px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        a.button:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 10px;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-  <h1>Sistema de Estoque e Almoxarifado</h1>
-  <p>Trabalho de Conclusão de Curso — Análise e Desenvolvimento de Sistemas</p>
+    <h1>Estoque Almoxarifado</h1>
+    <p>Projeto de TCC — Sistema de Controle de Estoque</p>
 </header>
 
-<section>
-  <h2>📌 Sobre o Projeto</h2>
-  <p>
-    Este projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC),
-    com o objetivo de criar um sistema para gerenciamento de estoque e
-    almoxarifado, facilitando o controle de produtos, entradas e saídas.
-  </p>
+<main>
+    <section>
+        <h2>📌 Sobre o projeto</h2>
+        <p>
+            Este projeto foi desenvolvido como Trabalho de Conclusão de Curso
+            no curso de Análise e Desenvolvimento de Sistemas.
+            O objetivo foi criar um sistema simples e funcional para controle
+            de estoque e almoxarifado, focando na organização, cadastro
+            e visualização dos dados.
+        </p>
+    </section>
 
-  <h2>🛠 Tecnologias Utilizadas</h2>
-  <ul>
-    <li>Python</li>
-    <li>Django</li>
-    <li>SQLite</li>
-    <li>HTML e CSS</li>
-  </ul>
+    <section>
+        <h2>🛠️ Tecnologias utilizadas</h2>
+        <div class="tech">
+            <span>Python</span>
+            <span>Django</span>
+            <span>SQLite</span>
+            <span>HTML</span>
+            <span>CSS</span>
+        </div>
+    </section>
 
-  <h2>👥 Trabalho em Grupo</h2>
-  <p>
-    Projeto desenvolvido em grupo para fins acadêmicos.
-  </p>
+    <section>
+        <h2>👨‍💻 Desenvolvimento</h2>
+        <p>
+            O sistema foi desenvolvido em grupo, desde a modelagem até
+            a implementação das funcionalidades.
+            Participei ativamente da construção da lógica,
+            estrutura do sistema e interface.
+        </p>
 
-  <h2>📂 Código-fonte</h2>
-  <p>
-    O código completo do sistema está disponível no repositório do GitHub.
-  </p>
-
-  <a class="btn" href="https://github.com/aegabriel/EstoqueAlmoxarifado">
-    Ver código no GitHub
-  </a>
-</section>
+        <a class="button" href="https://github.com/aegabriel/EstoqueAlmoxarifado">
+            🔗 Ver código no GitHub
+        </a>
+    </section>
+</main>
 
 <footer>
-  © 2025 — Gabriel • Portfólio Acadêmico
+    © 2025 — Projeto acadêmico desenvolvido por Gabriel
 </footer>
 
 </body>
