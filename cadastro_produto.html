@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cadastro de Produtos</title>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/cadastro_produto.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <script src="{% static 'js/cadastroprod.js' %}"></script>
+</head>
+<body>
+<header>
+    <img class="img1" src="{% static 'images/logoBranca.png' %}" alt="Logo">
+    <h3>Inovare Estoque Almoxarifado</h3>
+    <a href="{% url 'inicioadmin' %}" class="botao-inicio">Voltar à Página Inicial</a>
+</header>
+
+<div class="main-container">
+
+    <div class="image-barcode-container">
+        <h1>Cadastro de Produtos</h1>
+        <img src="{% static 'images/cadastroprod.png' %}" alt="Imagem de Cadastro" class="cadastro-image" id="imageSelector">
+        <svg id="barcode"></svg>
+        <input type="file" id="fileInput" accept="image/*" capture="camera" style="display: none;">
+    </div>
+
+    <div class="form-container">
+
+        <form method="post" action="{% url 'cadastroproduto' %}">
+            {% csrf_token %}
+            <input type="text" name="nomeprod" placeholder="Nome" required>
+            <br>
+            <input type="text" name="desc" placeholder="Descrição" required>
+            <br>
+            <input type="text" name="cod_barra" placeholder="Código" required>
+            <br>
+            <input type="number" name="quant" placeholder="Quantidade" required>
+            <br>
+            <input type="date" id="validade" name="validade" required>
+            <br>
+            {{ form.fornecedor }}
+
+            <div class="button-container">
+                <input type="submit" value="Enviar" class="btn">
+                <input type="reset" value="Limpar" class="btn">
+                <input type="button" value="Voltar" onclick="window.location.href='{% url 'inicioadmin' %}';"
+                       class="btn">
+                <input type="button" value="Galeria" onclick="window.location.href='{% url 'galeria' %}';"
+                       class="btn">
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <ul class="contact-info">
+                <li>
+                    <a href="https://www.instagram.com/"><img src="{% static 'images/instagram.png' %}" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/"><img src="{% static 'images/facebook.png' %}"
+                                                             alt="Facebook"></a>
+                    <a href="https://bsky.app/"><img src="{% static 'images/bluesky.png' %}" alt="Bluesky"></a>
+                </li>
+                <li><a href="mailto:inovarealmoxarifado0102@gmail.com">inovarealmoxarifado0102@gmail.com</a></li>
+                <li><a href="tel:+5517994578543">(17) 9945-75843</a></li>
+            </ul>
+        </div>
+        <img class="img2" src="{% static 'images/logoBranca.png' %}" alt="Logo">
+        <div class="footer-right">
+            <p>
+                Nosso papel é gerenciar e controlar materiais, incluindo armazenamento, controle de inventário,
+                recebimento e conferência, distribuição e manutenção de registros, para garantir a disponibilidade
+                eficiente e organizada dos suprimentos necessários para a operação da organização.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Gera o código de barras após a imagem
+    JsBarcode("#barcode", "123456789012", {
+        format: "CODE128", // Define o formato do código de barras
+        width: 3,          // Largura de cada barra
+        height: 50,        // Altura do código de barras
+        displayValue: true // Exibe o valor numérico abaixo do código de barras
+    });
+
+    // Adiciona evento de clique na imagem
+    document.getElementById('imageSelector').addEventListener('click', function () {
+        document.getElementById('fileInput').click(); // Simula o clique no input file invisível
+    });
+
+    // Adiciona evento para quando a imagem for selecionada ou capturada
+    document.getElementById('fileInput').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('imageSelector').src = e.target.result; // Atualiza a imagem com a nova foto
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+</body>
+</html>

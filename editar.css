@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-image: url('/static/images/fundoDeitado.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #000;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+}
+
+.img1 {
+    width: 15%;
+    max-width: 100px;
+    height: auto;
+}
+
+header h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.botao-inicio {
+    background-color: #681413;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botao-inicio:hover {
+    background-color: #9a1915;
+}
+
+footer {
+    background-color: #000;
+    color: white;
+    padding: 20px 0;
+    font-size: 14px;
+    margin-top: 210px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-left ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 50px;
+}
+
+.footer-left ul li {
+    margin-bottom: 10px;
+}
+
+.footer-left ul a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.footer-right {
+    width: 400px;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-left: 50px;
+}
+
+.footer-right p {
+    margin: 0;
+}
+
+.footer-left ul li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.footer-center {
+    text-align: center;
+    flex: 1;
+}
+
+.img2 {
+    width: 12%;
+    height: auto;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+h2 {
+    color: #681413;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    text-align: center;
+}
+
+.img4, .img5, .img6 {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 30px;
+    border-color: #000000;
+    border-radius: 10px;
+    background-color: rgba(135, 135, 135, 0.4);
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 250px;
+    transition: background-color 0.3s;
+}

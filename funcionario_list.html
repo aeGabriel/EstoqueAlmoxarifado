@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Lista Funcionario</title>
+    {% load static %}
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" media="screen" href="{%static 'css/funcionario_list.css' %}">
+</head>
+<body>
+    <img class="img1" src="/static/images/logoBranca.png" alt="Logo">
+    <h1>Funcionários</h1>
+    <a href="{% url 'funcionario_create' %}">Novo Funcionário</a>
+    <ul>
+        {% for funcionario in funcionarios %}
+            <li>
+                {{ funcionario.nome_funcionario }} - {{ funcionario.email }}
+                <a href="{% url 'funcionario_update' funcionario.pk %}">Editar</a>
+                <a href="{% url 'funcionario_delete' funcionario.pk %}">Deletar</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+  
+</body>
+</html>

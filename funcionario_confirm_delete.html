@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Funcionario</title>
+    {% load static %}
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{%static 'css/funcionario_confirm_delete.css' %}">
+</head>
+<body>
+    <div class="header">
+        <img class="img1" src="{% static 'images/logoBranca.png' %}" alt="Logo">
+        <h1>Deletar Funcionário</h1>
+    </div>
+    <div class="container">
+        <p>Tem certeza que deseja deletar {{ funcionario.nome_funcionario }}?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirmar</button>
+        </form>
+        <a href="{% url 'funcionario_list' %}">Cancelar</a>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <ul class="contact-info">
+                    <li>
+                        <a href="https://www.instagram.com/"><img src="/static/images/instagram.png" alt="Instagram"></a>
+                        <a href="https://www.facebook.com/"><img src="/static/images/facebook.png" alt="Facebook"></a>
+                        <a href="https://bsky.app/"><img src="/static/images/bluesky.png" alt="Bluesky"></a>
+                    </li>
+                    <li><a href="mailto:inovarealmoxarifado0102@gmail.com">inovarealmoxarifado0102@gmail.com</a></li>
+                    <li><a href="tel:+5517994578543">(17) 9945-75843</a></li>
+                </ul>
+            </div>
+            <img class="img2" src="{% static 'images/logoBranca.png' %}" alt="Logo">
+            <div class="footer-right">
+                <p>
+                    Nosso papel é gerenciar e controlar materiais, incluindo armazenamento, controle de inventário, recebimento e conferência, distribuição e manutenção de registros, para garantir a disponibilidade eficiente e organizada dos suprimentos necessários para a operação da organização.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

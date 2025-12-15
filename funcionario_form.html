@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Funcionario</title>
+    {% load static %}
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" media="screen" href="{%static 'css/funcionario_form.css' %}">
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Editar{% else %}Novo{% endif %} Funcionário</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'funcionario_list' %}">Voltar</a>
+</body>
+</html>
